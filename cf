@@ -3,13 +3,13 @@ red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
 ns_domain_cloudflare1() {
-DOMAIN=aku-masih.tk
+DOMAIN=ultrassh.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
 echo $sub > /root/cfku
-SUB_DOMAIN=cf-${sub}.aku-masih.tk
+SUB_DOMAIN=cf${sub}.ultrassh.my.id
 CF_ID=santzx45@yahoo.com
 CF_KEY=71b282757cf35bb4a681097b6b6f5be0935d9
-echo "aku-masih.tk" > /root/domain
+echo "ultrassh.my.id" > /root/domain
 echo $SUB_DOMAIN > /root/domain
 
 set -euo pipefail

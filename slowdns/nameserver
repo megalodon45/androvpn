@@ -1,10 +1,10 @@
 #!/bin/sh
 REPOS="https://github.com/megalodon45/androvpn/raw/main/"
 ns_domain_cloudflare() {
-	DOMAIN="ultrassh.my.id"
+	DOMAIN="androvpn.cloud"
 	DOMAIN_PATH=$(cat /etc/xray/domain)
 	SUB=$(tr </dev/urandom -dc a-z0-9 | head -c7)
-	SUB_DOMAIN=${SUB}."ultrassh.my.id"
+	SUB_DOMAIN=${SUB}."androvpn.cloud"
 	NS_DOMAIN=dns.${SUB_DOMAIN}
 	CF_ID=santzx45@yahoo.com
         CF_KEY=71b282757cf35bb4a681097b6b6f5be0935d9
